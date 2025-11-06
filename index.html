@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FRM Incident Summary - Interim Dashboard View</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+</head>
+<body>
+    <div class="presentation-container">
+        <!-- Slide Navigation -->
+        <div class="slide-navigation">
+            <button class="nav-btn prev-btn" onclick="previousSlide()" disabled>‹ Previous</button>
+            <span class="slide-counter">
+                <span id="current-slide">1</span> / <span id="total-slides">13</span>
+            </span>
+            <button class="nav-btn next-btn" onclick="nextSlide()">Next ›</button>
+        </div>
+
+        <!-- Slide 1: Cover Slide -->
+        <div class="slide active" id="slide-1">
+            <div class="slide-content cover-slide">
+                <div class="sanofi-logo">
+                    <div class="logo-placeholder">SANOFI</div>
+                </div>
+                <h1 class="cover-title">FRM Incident Summary - Interim Dashboard View</h1>
+                <div class="cover-metadata">
+                    <p class="data-snapshot">Data Snapshot: Sept 2025</p>
+                    <p class="source-note">Source: Weekly Excel from FRM Team</p>
+                </div>
+                <div class="slide-number">1</div>
+            </div>
+        </div>
+
+
+
+<!-- <div class="slide" id="slide-2">
+    <div class="slide-content">
+        <h2 class="slide-header" style="font-size: 2.5em; line-height: 1.2; margin-bottom: 30px;">Agenda</h2>
+        <div class="content-area">
+            <ul class="agenda-list" style="font-size: 1.2em; list-style-type: none; padding: 0; margin: 20px 0;">
+                <li style="font-size: 1.125em; margin-bottom: 15px; padding-left: 20px; position: relative; line-height: 1.4;">
+                    <strong style="font-size: 1em;">Executive Summary:</strong> Key metrics on total incidents, ageing, and top issues.
+                </li>
+                <li style="font-size: 1.125em; margin-bottom: 15px; padding-left: 20px; position: relative; line-height: 1.4;">
+                    <strong style="font-size: 1em;">Incidents by Category:</strong> Breakdown and counts via bar chart.
+                </li>
+                <li style="font-size: 1.125em; margin-bottom: 15px; padding-left: 20px; position: relative; line-height: 1.4;">
+                    <strong style="font-size: 1em;">Incidents by Sub-Category:</strong> Top 10 highlights with visualization.
+                </li>
+                <li style="font-size: 1.125em; margin-bottom: 15px; padding-left: 20px; position: relative; line-height: 1.4;">
+                    <strong style="font-size: 1em;">Priority Distribution:</strong> Counts across priority levels.
+                </li>
+                <li style="font-size: 1.125em; margin-bottom: 15px; padding-left: 20px; position: relative; line-height: 1.4;">
+                    <strong style="font-size: 1em;">Ageing Analysis:</strong> Overview of incident timelines.
+                </li>
+                <li style="font-size: 1.125em; margin-bottom: 15px; padding-left: 20px; position: relative; line-height: 1.4;">
+                    <strong style="font-size: 1em;">Submission Trends:</strong> Patterns over time.
+                </li>
+                <li style="font-size: 1.125em; margin-bottom: 15px; padding-left: 20px; position: relative; line-height: 1.4;">
+                    <strong style="font-size: 1em;">Field Impact:</strong> Affected columns from source object.
+                </li>
+                <li style="font-size: 1.125em; margin-bottom: 15px; padding-left: 20px; position: relative; line-height: 1.4;">
+                    <strong style="font-size: 1em;">Solution Ownership:</strong> Category-to-team mapping for FRM Leads.
+                </li>
+            </ul>
+        </div>
+        <div class="slide-number" style="font-size: 1.5em;">1</div>
+    </div>
+</div> -->
+
+
+
+        <!-- Slide 2: Executive Summary -->
+        <div class="slide" id="slide-2">
+            <div class="slide-content">
+                <h2 class="slide-header">Executive Summary</h2>
+                <div class="metrics-grid">
+                    <div class="metric-tile">
+                        <div class="metric-value">207</div>
+                        <div class="metric-label">Total Incidents</div>
+                    </div>
+                    <div class="metric-tile">
+                        <div class="metric-value">71.98%</div>
+                        <div class="metric-label">Over 90 Days</div>
+                    </div>
+                    <div class="metric-tile">
+                        <div class="metric-value">Data Discrepancy</div>
+                        <div class="metric-label">Top Category</div>
+                    </div>
+                    <div class="metric-tile">
+                        <div class="metric-value">Payer Name Mismatch</div>
+                        <div class="metric-label">Top Sub-Category</div>
+                    </div>
+                </div>
+                <div class="slide-number">2</div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Incidents by Category -->
+        <div class="slide" id="slide-3">
+            <div class="slide-content">
+                <h2 class="slide-header">Count of Incidents by Category</h2>
+                <div class="chart-container">
+                    <canvas id="categoryChart"></canvas>
+                </div>
+                <div class="slide-number">3</div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Incidents by Sub-Category -->
+        <div class="slide" id="slide-4">
+            <div class="slide-content">
+                <h2 class="slide-header">Count of Incidents by Sub-Category (Top 10)</h2>
+                <div class="chart-container">
+                    <canvas id="subcategoryChart"></canvas>
+                </div>
+                <div class="slide-number">4</div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Priority Mix -->
+        <div class="slide" id="slide-5">
+            <div class="slide-content">
+                <h2 class="slide-header">Count of Incidents by Priority</h2>
+                <div class="chart-container">
+                    <canvas id="priorityChart"></canvas>
+                </div>
+                <div class="slide-number">5</div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Ageing Overview -->
+        <div class="slide" id="slide-6">
+            <div class="slide-content">
+                <h2 class="slide-header">Ageing Overview</h2>
+                <div class="chart-container">
+                    <canvas id="ageingChart"></canvas>
+                </div>
+                <div class="slide-number">6</div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Submission Trend -->
+        <div class="slide" id="slide-7">
+            <div class="slide-content">
+                <h2 class="slide-header">Submission Trend</h2>
+                <div class="chart-container">
+                    <canvas id="trendChart"></canvas>
+                </div>
+                <div class="slide-number">7</div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Field Impact -->
+        <div class="slide" id="slide-8">
+            <div class="slide-content">
+                <h2 class="slide-header">Majority Field Impact</h2>
+                <div class="chart-container">
+                    <canvas id="fieldImpactChart"></canvas>
+                </div>
+                <div class="slide-number">8</div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Object Impact -->
+        <div class="slide" id="slide-9">
+            <div class="slide-content">
+                <h2 class="slide-header">Impacted Object</h2>
+                <div class="chart-container">
+                    <canvas id="objectImpactChart"></canvas>
+                </div>
+                <div class="slide-number">9</div>
+            </div>
+        </div>
+
+        <!-- Slide 10: Repeats and Duplicates -->
+        <div class="slide" id="slide-10">
+            <div class="slide-content">
+                <h2 class="slide-header">Repeats and Duplicates</h2>
+                <div class="content-area">
+                    <div class="summary-box">
+                        <h3>Summary</h3>
+                        <ul>
+                            <li><strong>27</strong> unique patterns identified with multiple incidents</li>
+                            <li>Potential duplicates require investigation</li>
+                            <li>Pattern analysis suggests systematic issues</li>
+                        </ul>
+                    </div>
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Pattern Type</th>
+                                    <th>Occurrences</th>
+                                    <th>Impact Level</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Duplicate Cases</td>
+                                    <td>21</td>
+                                    <td>High</td>
+                                </tr>
+                                <tr>
+                                    <td>Provider Mismatch</td>
+                                    <td>17</td>
+                                    <td>Medium</td>
+                                </tr>
+                                <tr>
+                                    <td>Data Missing Patterns</td>
+                                    <td>15</td>
+                                    <td>Medium</td>
+                                </tr>
+                                <tr>
+                                    <td>Other Patterns</td>
+                                    <td>12</td>
+                                    <td>Low</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="slide-number">10</div>
+            </div>
+        </div>
+
+        <!-- Slide 11: High-Impact Identifiers -->
+        <div class="slide" id="slide-11">
+            <div class="slide-content">
+                <h2 class="slide-header">High-Impact Identifiers</h2>
+                <div class="content-area">
+                    <div class="highlight-box">
+                        <h3>Critical Identifiers Impacted</h3>
+                        <p class="impact-number"><strong>60</strong> incidents affecting critical identifiers</p>
+                    </div>
+                    <div class="identifier-list">
+                        <div class="identifier-item">
+                            <h4>HUB_PATIENT_ID</h4>
+                            <p>Patient identification conflicts affecting care continuity</p>
+                        </div>
+                        <div class="identifier-item">
+                            <h4>IMS_PRESC_ID</h4>
+                            <p>Prescription tracking discrepancies</p>
+                        </div>
+                        <div class="identifier-item">
+                            <h4>PRESC_NPI</h4>
+                            <p>Provider identification mismatches</p>
+                        </div>
+                        <div class="identifier-item">
+                            <h4>CUST_ID</h4>
+                            <p>Customer identification inconsistencies</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide-number">11</div>
+            </div>
+        </div>
+
+        <!-- Slide 12: Data Quality Notes -->
+        <div class="slide" id="slide-12">
+            <div class="slide-content">
+                <h2 class="slide-header">Data Quality Notes</h2>
+                <div class="content-area">
+                    <div class="notes-section">
+                        <h3>Key Observations</h3>
+                        <ul class="quality-notes">
+                            <li>
+                                <strong>Incomplete Rows:</strong>
+                                <p>Multiple records contain missing mandatory fields, particularly CUST_ID and provider information</p>
+                            </li>
+                            <li>
+                                <strong>Normalization Requirements:</strong>
+                                <p>Spelling variants detected in payer names and provider information require standardization</p>
+                            </li>
+                            <li>
+                                <strong>Data Consistency:</strong>
+                                <p>Cross-referencing reveals inconsistencies between related data points</p>
+                            </li>
+                            <li>
+                                <strong>Temporal Issues:</strong>
+                                <p>Ageing data shows 74.4% of incidents are over 90 days old, indicating systemic delays</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="slide-number">12</div>
+            </div>
+        </div>
+
+        <!-- Slide 13: Solution Sits With -->
+        <div class="slide" id="slide-13">
+            <div class="slide-content">
+                <h2 class="slide-header">Solution Sits With</h2>
+                <div class="content-area">
+                    <div class="placeholder-section">
+                        <h3>Category → Solution Owner Mapping</h3>
+                        <!-- <p class="placeholder-note">(To be populated by FRM Leads)</p> -->
+                        <div class="mapping-placeholder">
+                            <div class="mapping-item">
+                                <span class="category">Data Discrepancy</span>
+                                <span class="arrow">→</span>
+                                <span class="owner">TBD</span>
+                            </div>
+                            <div class="mapping-item">
+                                <span class="category">Data Missing</span>
+                                <span class="arrow">→</span>
+                                <span class="owner">TBD</span>
+                            </div>
+                            <div class="mapping-item">
+                                <span class="category">Data Duplication</span>
+                                <span class="arrow">→</span>
+                                <span class="owner">TBD</span>
+                            </div>
+                            <div class="mapping-item">
+                                <span class="category">Obsolete Data</span>
+                                <span class="arrow">→</span>
+                                <span class="owner">TBD</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide-number">13</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
