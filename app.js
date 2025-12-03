@@ -203,7 +203,7 @@ const chartColors = [
 
 // Current slide tracking
 let currentSlide = 1;
-const totalSlides = 14;
+const totalSlides = 9;
 
 
 // Navigation functions
@@ -355,7 +355,7 @@ function createSubcategoryChart() {
                     }
                 },
                 datalabels: {     // added datalabels
-                    anchor: 'center',
+                    anchor: 'end',
                     align: 'end',
                     color: 'black',
                     font: { weight: 'bold' },
@@ -366,7 +366,8 @@ function createSubcategoryChart() {
             },
             scales: {
                 x: {
-                    beginAtZero: true
+                    beginAtZero: true,
+					suggestedMax: 50
                 },
                 y: {
                     ticks: {
