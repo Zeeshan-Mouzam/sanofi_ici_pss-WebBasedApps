@@ -161,11 +161,7 @@ const incidentData = {
         },
         {
             "name": "Payer Name incorrect",
-            "count": 5
-        },
-        {
-            "name": "PAYER_NM incorrect",
-            "count": 3
+            "count": 8
         },
         {
             "name": "IMS_PRESC_ID incorrect",
