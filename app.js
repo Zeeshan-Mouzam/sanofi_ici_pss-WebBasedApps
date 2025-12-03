@@ -3,11 +3,11 @@ Chart.register(ChartDataLabels);
 
 // Presentation data
 const incidentData = {
-    "total_incidents": 96,
+    "total_incidents": 89,
     "categories": [
         {
             "name": "Data Discrepancy",
-            "count": 78
+            "count": 71
         },
         {
             "name": "Data Duplication",
@@ -25,7 +25,7 @@ const incidentData = {
     "subcategories": [
         {
             "name": "Payer Name Mismatch",
-            "count": 47
+            "count": 40
         },
         {
             "name": "Duplicate Case",
@@ -44,11 +44,11 @@ const incidentData = {
             "count": 4
         },
         {
-            "name": "Provider - Territory Mismatch",
-            "count": 3
+            "name": "Payer Type/ Conversion Group Mismatch",
+            "count": 4
         },
         {
-            "name": "Payer Type/ Conversion Group Mismatch",
+            "name": "Provider - Territory Mismatch",
             "count": 3
         },
         {
@@ -60,14 +60,14 @@ const incidentData = {
             "count": 2
         },
         {
-            "name": "Payer Type Mismatch",
+            "name": "CCT ID Mismatch",
             "count": 1
         }
     ],
     "priority": [
         {
             "name": "5 - Very Low",
-            "count": 90
+            "count": 83
         },
         {
             "name": "3 - Moderate",
@@ -89,7 +89,7 @@ const incidentData = {
         },
         {
             "name": "61-90 Days",
-            "count": 14
+            "count": 12
         },
         {
             "name": "91-120 Days",
@@ -97,7 +97,7 @@ const incidentData = {
         },
         {
             "name": ">120 Days",
-            "count": 61
+            "count": 56
         }
     ],
     "monthly_trend": [
@@ -107,61 +107,49 @@ const incidentData = {
         },
         {
             "month": "2025-01",
-            "count": 6
-        },
-        {
-            "month": "2025-02",
             "count": 1
         },
         {
             "month": "2025-03",
-            "count": 11
+            "count": 6
         },
         {
             "month": "2025-04",
-            "count": 17
+            "count": 25
         },
         {
             "month": "2025-05",
-            "count": 11
+            "count": 12
         },
         {
             "month": "2025-06",
-            "count": 7
-        },
-        {
-            "month": "2025-07",
             "count": 10
         },
         {
+            "month": "2025-07",
+            "count": 11
+        },
+        {
             "month": "2025-08",
-            "count": 17
+            "count": 14
         },
         {
             "month": "2025-09",
-            "count": 3
-        },
-        {
-            "month": "2025-10",
             "count": 5
         },
         {
-            "month": "2025-11",
-            "count": 1
-        },
-        {
-            "month": "2025-12",
-            "count": 6
+            "month": "2025-10",
+            "count": 4
         }
     ],
     "field_impact": [
         {
             "name": "Payer Type incorrect PAYER_NM incorrect",
-            "count": 19
+            "count": 17
         },
         {
             "name": "Payer Type incorrect",
-            "count": 11
+            "count": 9
         },
         {
             "name": "HUB_PATIENT_ID, HUB_SITE_ADDR_1 , IMS_PRESC_ID",
@@ -172,34 +160,34 @@ const incidentData = {
             "count": 6
         },
         {
-            "name": "PAYER_NM incorrect",
+            "name": "Payer Name incorrect",
             "count": 5
         },
         {
-            "name": "Payer Name incorrect",
-            "count": 5
+            "name": "PAYER_NM incorrect",
+            "count": 3
         },
         {
             "name": "IMS_PRESC_ID incorrect",
             "count": 3
         },
         {
-            "name": "Payer Type & conversion_grp incorrect",
-            "count": 3
-        },
-        {
-            "name": "PAYER_TYPE incorrect RAW_PAYER_TYPE incorrect",
+            "name": "IMS_CURR_IND_FLG Incorrect",
             "count": 2
         },
         {
-            "name": "IMS_CURR_IND_FLG incorrect",
+            "name": "HUB_PATIENT_ID & NPI is mismatched",
+            "count": 2
+        },
+        {
+            "name": "HUB_SITE_ADDR_1 incorrect HUB_SITE_NM incorrect",
             "count": 2
         }
     ],
     "objects": [
         {
             "name": "FCT_DUPI_PAT_VW",
-            "count": 94
+            "count": 87
         },
         {
             "name": "DIM_CUST_FRZ_HCP_PROF_PDRP_CIM",
