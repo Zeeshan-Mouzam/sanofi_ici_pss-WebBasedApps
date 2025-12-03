@@ -874,15 +874,22 @@ body {
   background: linear-gradient(135deg, var(--sanofi-light-blue) 0%, var(--sanofi-white) 100%);
 }
 
-.sanofi-logo {
-  margin-bottom: 40px;
+/* Logo Size Control */
+.logo-img {
+    max-width: 250px;  /* Forces the logo to be small */
+    width: 100%;       /* Ensures it scales responsively up to 250px */
+    height: auto;      /* Keeps the logo from looking squashed */
+    display: block;    /* Helps with centering */
+    margin: 0 auto;    /* Centers the image horizontally */
 }
 
-.logo-placeholder {
-  font-size: var(--font-size-xxl);
-  font-weight: 700;
-  color: var(--sanofi-navy);
-  letter-spacing: 3px;
+/* Spacing Control */
+.sanofi-logo {
+    margin-bottom: 2rem; /* Adds space between logo and "FRM Incident..." title */
+    width: 100%;         /* Ensures the container spans full width */
+    display: flex;       /* Flexbox for perfect centering */
+    justify-content: center;
+	
 }
 
 .cover-title {
