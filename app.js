@@ -367,7 +367,7 @@ function createSubcategoryChart() {
             scales: {
                 x: {
                     beginAtZero: true,
-					suggestedMax: 100
+					suggestedMax: 50
                 },
                 y: {
                     ticks: {
