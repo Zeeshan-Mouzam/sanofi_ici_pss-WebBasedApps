@@ -3,101 +3,101 @@ Chart.register(ChartDataLabels);
 
 // Presentation data
 const incidentData = {
-    "total_incidents": 207,
+    "total_incidents": 96,
     "categories": [
         {
             "name": "Data Discrepancy",
-            "count": 116
-        },
-        {
-            "name": "Data Missing",
-            "count": 55
+            "count": 78
         },
         {
             "name": "Data Duplication",
-            "count": 23
+            "count": 12
+        },
+        {
+            "name": "Data Missing",
+            "count": 5
         },
         {
             "name": "Obsolete Data",
-            "count": 13
+            "count": 1
         }
     ],
     "subcategories": [
         {
             "name": "Payer Name Mismatch",
-            "count": 54
+            "count": 47
         },
         {
             "name": "Duplicate Case",
-            "count": 23
-        },
-        {
-            "name": "Provider Missing",
-            "count": 19
-        },
-        {
-            "name": "Case Missing",
-            "count": 19
+            "count": 12
         },
         {
             "name": "Case - Provider Mismatch",
-            "count": 18
-        },
-        {
-            "name": "QS still Active",
-            "count": 14
+            "count": 10
         },
         {
             "name": "Indication Mismatch",
-            "count": 11
-        },
-        {
-            "name": "CCT ID Missing",
-            "count": 8
-        },
-        {
-            "name": "Territory Mismatch",
             "count": 6
         },
         {
             "name": "Zipcode Mismatch",
-            "count": 5
+            "count": 4
+        },
+        {
+            "name": "Provider - Territory Mismatch",
+            "count": 3
+        },
+        {
+            "name": "Payer Type/ Conversion Group Mismatch",
+            "count": 3
+        },
+        {
+            "name": "Case Missing",
+            "count": 2
+        },
+        {
+            "name": "Territory Mismatch",
+            "count": 2
+        },
+        {
+            "name": "Payer Type Mismatch",
+            "count": 1
         }
     ],
     "priority": [
         {
             "name": "5 - Very Low",
-            "count": 178
-        },
-        {
-            "name": "4 - Low",
-            "count": 9
+            "count": 90
         },
         {
             "name": "3 - Moderate",
-            "count": 20
+            "count": 4
+        },
+        {
+            "name": "4 - Low",
+            "count": 2
         }
     ],
     "ageing": [
         {
             "name": "1-30 Days",
-            "count": 7
+            "count": 4
         },
         {
             "name": "31-60 Days",
-            "count": 13
+            "count": 4
         },
         {
             "name": "61-90 Days",
-            "count": 38
+            "count": 14
         },
         {
             "name": "91-120 Days",
-            "count": 20
+            "count": 13
         },
         {
             "name": ">120 Days",
-            "count": 129
+            "count": 61
         }
     ],
     "monthly_trend": [
@@ -107,98 +107,107 @@ const incidentData = {
         },
         {
             "month": "2025-01",
-            "count": 8
+            "count": 6
         },
         {
             "month": "2025-02",
-            "count": 12
+            "count": 1
         },
         {
             "month": "2025-03",
-            "count": 10
+            "count": 11
         },
         {
             "month": "2025-04",
-            "count": 52
-        },
-        {
-            "month": "2025-05",
-            "count": 26
-        },
-        {
-            "month": "2025-06",
             "count": 17
         },
         {
+            "month": "2025-05",
+            "count": 11
+        },
+        {
+            "month": "2025-06",
+            "count": 7
+        },
+        {
             "month": "2025-07",
-            "count": 20
+            "count": 10
         },
         {
             "month": "2025-08",
-            "count": 32
+            "count": 17
         },
         {
             "month": "2025-09",
-            "count": 22
+            "count": 3
         },
         {
             "month": "2025-10",
-            "count": 7
+            "count": 5
+        },
+        {
+            "month": "2025-11",
+            "count": 1
+        },
+        {
+            "month": "2025-12",
+            "count": 6
         }
     ],
     "field_impact": [
         {
-            "name": "PAYER_NM incorrect",
-            "count": 29
+            "name": "Payer Type incorrect PAYER_NM incorrect",
+            "count": 19
         },
         {
-            "name": "CUST_ID missing",
-            "count": 26
-        },
-        {
-            "name": "Payer Type   incorrect_x000D_",
-            "count": 23
+            "name": "Payer Type incorrect",
+            "count": 11
         },
         {
             "name": "HUB_PATIENT_ID, HUB_SITE_ADDR_1 , IMS_PRESC_ID",
-            "count": 14
-        },
-        {
-            "name": "HUB_SITE_ZIP incorrect",
-            "count": 10
-        },
-        {
-            "name": "Payer Type  incorrect",
-            "count": 10
-        },
-        {
-            "name": "BRIDGE_CURR_STAT_REAS_GRP incorrect",
             "count": 8
         },
         {
-            "name": "BRIDGE_LAST_STATUS_REASON incorrect_x000D_",
-            "count": 7
-        },
-        {
-            "name": "HUB_SITE_NM incorrect",
+            "name": "HUB_SITE_ZIP incorrect",
             "count": 6
         },
         {
-            "name": "Last Dispense Date Null",
-            "count": 6
+            "name": "PAYER_NM incorrect",
+            "count": 5
+        },
+        {
+            "name": "Payer Name incorrect",
+            "count": 5
+        },
+        {
+            "name": "IMS_PRESC_ID incorrect",
+            "count": 3
+        },
+        {
+            "name": "Payer Type & conversion_grp incorrect",
+            "count": 3
+        },
+        {
+            "name": "PAYER_TYPE incorrect RAW_PAYER_TYPE incorrect",
+            "count": 2
+        },
+        {
+            "name": "IMS_CURR_IND_FLG incorrect",
+            "count": 2
         }
     ],
     "objects": [
         {
             "name": "FCT_DUPI_PAT_VW",
-            "count": 204
+            "count": 94
         },
         {
             "name": "DIM_CUST_FRZ_HCP_PROF_PDRP_CIM",
-            "count": 3
+            "count": 2
         }
     ]
 };
+
 
 
 // Chart color palette
