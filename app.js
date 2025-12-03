@@ -355,7 +355,7 @@ function createSubcategoryChart() {
                     }
                 },
                 datalabels: {     // added datalabels
-                    anchor: 'end',
+                    anchor: 'center',
                     align: 'end',
                     color: 'black',
                     font: { weight: 'bold' },
