@@ -261,9 +261,9 @@ function createChartsForSlide(slideNumber) {
         case 8:
             createFieldImpactChart();
             break;
-        case 9:
-            createObjectImpactChart();
-            break;
+        // case 9:
+        //     createObjectImpactChart();
+        //     break;
     }
 }
 
